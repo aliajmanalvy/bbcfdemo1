@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/version/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/navbars/navbar-1/assets/css/navbar-1.css">
+    <!-- linknew 2 add -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+
+    <!-- <script src="path/to/wow.min.js"></script> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <title>BBCF</title>
+
+
+    <style>
+        /* Custom CSS for navbar */
+        .navbar-brand img {
+          max-height: 40px; /* Adjust as needed */
+        }
+        .navbar-nav {
+          text-align: center;
+        }
+        .navbar-nav .nav-link {
+          padding: 0.5rem 1rem;
+        }
+
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+
+
+    /* .carousel-content h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    } */
+
+    .carousel-item2 {
+    transition: transform 0.5s !important;
+  }
+
+.big-menu-nav{
+  width: 1000px !important;
+}
+.big-menu-nav:hover{
+  display: block;
+}
+  .carousel-item2.active {
+    transform: scale(1.1) !important;
+     /* Adjust zoom level as needed */
+  }
+
+  .carousel-control-prev {
+  pointer-events: none; 
+}
+  .carousel-control-prev span{
+  pointer-events: painted;
+}
+  .carousel-control-next {
+  pointer-events: none; 
+}
+.carousel-control-next span{
+  pointer-events: painted;
+}
+    /* preloader */
+    #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner-outer {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #13814C;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        .spinner-outer::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            border: 12px solid #f3f3f3;
+            border-top: 12px solid #746f6f;
+            border-radius: 50%;
+            animation: spin-inner 1.5s linear infinite reverse;
+        }
+
+        .spinner-outer::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #E14A4A;
+            border-radius: 50%;
+            animation: spin-inner 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spin-inner {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .content {
+            display: none; /* Hide content initially */
+            padding: 20px;
+        }
+
+        body.loaded .content {
+            display: block; /* Show content after loading */
+        }
+
+        body.loaded #preloader {
+            display: none; /* Hide preloader after loading */
+        }
+        /* preloader */
+        /* Adjust the breakpoint for responsiveness */
+        @media (max-width: 768px) {
+          .navbar-nav {
+            text-align: left;
+          }
+          .big-menu-nav{
+          width: 800px !important;
+         }
+        }
+      </style>
+</head>
+<body class="">
+  <div id="preloader">
+    <div class="spinner-outer"></div>
+</div>
+   <!-- navbar -->
+   <header style="margin-bottom: 100px;" class="">
+    <nav class="navbar container-fluid bg-body-tertiary fixed-top nav-back py-lg-4 mb-5 nav-width">
+      <div class="container d-lg-flex align-items-center logo-width">
+        <!-- Left side -->
+        <div>
+          <a style="" class="navbar-brand" href="#"> <img class="logo-bg mx-lg-auto" src="https://baid-bbcf.org/wp-content/themes/baidbbcf/images/c3762578e2d192351afc05eb6f898cf2_baidbbcf_logo_banner_22.png" alt=""> </a>
+      
+        </div>
+        
+        <!-- Center (visible on large screens) -->
+        <div style="margin-left: -5%;"  class="d-none d-lg-flex flex-grow-1 justify-content-center">
+          <ul class="navbar-nav navbar-nav2">
+             <li class="nav-item dropdown li-hover">
+                  <a onclick="route()" style="font-weight: 600;
+                  padding: 10px 0;" class="nav-link nav-text" href="/" id="navbarDropdown link-home" role="button" data-toggle="dropdown">
+                     Home
+                   </a>
+                 <div  style=" position: absolute;   transform: translateX(-25%)  !important;" class="dropdown-menu ">
+                    <div style="" class="d-flex row big-menu-nav px-4">
+                      <div class="col-3">
+                           <div  class="p-4 mx-2 my-4"  style="position: relative; height: 300px; background-image: url('https://images.pexels.com/photos/1122639/pexels-photo-1122639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                             <a onclick="route()"  href="/" style="bottom: 40% !important;position: absolute; right: 10% !important;left: 10% !important;"  class="btn btn-success " href="">
+                             Home
+                             </a>
+                             <h6 style="    position: absolute; bottom: 10px;
+                             left: 50%;
+                             transform: translateX(-50%);" class="text-white">
+                             Home One
+                            </h6>
+                           </div>  
+                      </div>
+                      <div class="col-3">
+                           <div  class="p-4 mx-2 my-4"  style="position: relative; height: 300px; background-image: url('https://images.pexels.com/photos/1122639/pexels-photo-1122639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                            <a onclick="route()"  href="/#home2" style="bottom: 40% !important;position: absolute; right: 10% !important;left: 10% !important;"  class="btn btn-success " href="">
+                              
+                                Home
+                             </a>
+                             <h6 style="    position: absolute;
+                             bottom: 10px;
+                             left: 50%;
+                             transform: translateX(-50%);" class="text-white">Home Two</h6>
+                           </div>
+                           
+                      </div>
+                      <div class="col-3">
+                           <div  class="p-4 mx-2 my-4"  style="position: relative; height: 300px; background-image: url('https://images.pexels.com/photos/1122639/pexels-photo-1122639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                            <a onclick="route()"  href="/#events-home" style="bottom: 40% !important;position: absolute; right: 10% !important;left: 10% !important;"  class="btn btn-success " href="">
+                                Home
+                             </a>
+                             <h6 style="    position: absolute;
+                             bottom: 10px;
+                             left: 50%;
+                             transform: translateX(-50%);" class="text-white">Home Three</h6>
+                           </div>
+                           
+                      </div>
+                      <div class="col-3">
+                           <div  class="p-4 mx-2 my-4"  style="position: relative; height: 300px; background-image: url('https://images.pexels.com/photos/1122639/pexels-photo-1122639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                            <a onclick="route()"  href="/#blog-news-home" style="bottom: 40% !important;position: absolute; right: 10% !important;left: 10% !important;"  class="btn btn-success " href="">
+                              
+                                Home
+                             </a>
+                             <h6 style="    position: absolute;
+                             bottom: 10px;
+                             left: 50%;
+                             transform: translateX(-50%);" class="text-white">Home Four</h6>
+                           </div>
+                           
+                      </div>
+                      
+                      
+                      
+                     
+                    </div>
+                </div>
+             </li>
+                <!-- <li class="nav-item li-hover">
+                  <a class="nav-link text-white nav-text" href="#">WORKING REGIONS</a>
+                </li> -->
+                <li class="nav-item li-hover">
+                  <a onclick="route()" id="link-about" class="nav-link  nav-text" href="/otherpages/about">About</a>
+                  
+                </li>
+                <!-- <li class="nav-item li-hover">
+                  <a class="nav-link text-white nav-text" href="#">OUR PUBLICATIONS</a>
+                </li> -->
+                <li class="nav-item dropdown li-hover">
+                  <a id="" class="nav-link nav-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                      Pages
+                  </a>
+                  <ul  style="position: absolute; overflow: hidden;" class="dropdown-menu">
+                      <li><a onclick="route()" class="dropdown-item nav-sub" href="/project">Project</a></li>
+                      <li><a onclick="route()" class="dropdown-item nav-sub" href="/singleproject">Project Single</a></li>
+                      <li><a onclick="route()" class="dropdown-item nav-sub" href="/volunteer">Volunteer</a></li>
+                      <li><a onclick="route()" class="dropdown-item nav-sub" href="/singlevolunteer">Volunteer Single</a></li>
+                      <li><a onclick="route()" class="dropdown-item nav-sub" href="/faq">FAQ</a></li>
+                      <li><a onclick="route()" class="dropdown-item nav-sub" href="/404">404 Error</a></li>
+                      
+                  </ul>
+              </li>
+                <li class="nav-item dropdown li-hover">
+                  <a class="nav-link nav-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                      Event
+                  </a>
+                  <ul  style="position: absolute; overflow: hidden;" class="dropdown-menu">
+                      <li><a onclick="route()" class="dropdown-item nav-sub" href="/events">Events</a></li>
+                      <li><a onclick="route()" class="dropdown-item nav-sub" href="/eventsingle">Event Single</a></li>
+                      
+                  </ul>
+               </li>
+                <li class="nav-item dropdown li-hover">
+                  <a onclick="route()" class="nav-link nav-text" href="/blogs" id="navbarDropdown" role="button" data-toggle="dropdown">
+                      Blog
+                  </a>
+                  <ul  style="position: absolute; overflow: hidden;" class="dropdown-menu">
+                      <li><a onclick="route()" class="dropdown-item nav-sub" href="/blogs">All Blogs</a></li>
+                      <li><a onclick="route()" class="dropdown-item nav-sub" href="/singleblog">Single blog</a></li>
+                      
+                  </ul>
+               </li>
+                
+                
+                <li class="nav-item li-hover">
+                  <a onclick="route()" id="link-contact" class="nav-link  nav-text" href="/contact">Contact</a>
+                </li>
+                <!-- <li class="nav-item li-hover">
+                  <a class="nav-link  nav-text" href="#">Contact Us</a>
+                </li> -->
+            <!-- Add more nav-items as needed -->
+          </ul>
+        </div>
+        
+        <!-- Right side -->
+        
+          <!-- <button type="button" class="btn btn-primary d-none d-lg-block nav-button-color">Donate Now</button> -->
+          <!-- <a class="donate-button d-none d-lg-block mx-lg-auto" href="">Donate Now</a> -->
+          <a onclick="route()"  href="/donate" class="donate-btn d-none d-lg-block ms-lg-auto"><span>Donate Now</span></a>
+       
+        
+        <!-- Offcanvas toggle button (visible only in mobile view) -->
+        <button class="navbar-toggler d-lg-none text-success bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon offcanvas-res"></span>
+        </button>
+      </div>
+    
+      <!-- Offcanvas menu -->
+      <div style="width: 360px !important;"  class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <a style="margin: 0px !important;" class="navbar-brand bg-secondary" href="#"> 
+            <img class="" src="https://baid-bbcf.org/wp-content/themes/baidbbcf/images/c3762578e2d192351afc05eb6f898cf2_baidbbcf_logo_banner_22.png" alt=""> 
+          </a>
+
+          <!-- close button -->
+          <button  type="button" class="btn-close  btn-close-bgd me-4 mt-2" data-bs-dismiss="offcanvas" aria-label="Close">
+            <svg style="margin-top: -13px; margin-left: -4px; fill:#fff; height:24px; width:24px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+          </button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav flex-column mx-3 mb-5 mt-4">
+            <li class="nav-item nav-li d-flex justify-content-between">
+              <!-- toggle -->
+               <a class="nav-link text-white nav-can-a " href="#">Home</a>
+               <button id="home-b" onclick="changeButtonText('home-b')" style="overflow: hidden !important;"  class="canv-btn-plus" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleh" aria-expanded="false" aria-controls="collapseExampleh">
+                 +
+               </button>
+             </li>
+             <div class="bg-dark" style="margin-left: -20px !important;">
+                 
+               <div   class="collapse" id="collapseExampleh">
+                 <div style="" class="card card-body bg-dark each-collapse">
+                  
+                    <div style="" class="   px-4">
+                      <div class="each-collapse-page">
+                           <div  class="p-4 mx-2 my-4"  style="position: relative; height: 300px; background-image: url('https://images.pexels.com/photos/1122639/pexels-photo-1122639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                            
+                           </div>
+                           <a style=""  class="btn btn-success  mb-2" href="">
+                              
+                            Home
+                         </a>
+                         <h6 style="   " class="text-white mb-2">Home One</h6>
+                      </div>
+                      <div class="each-collapse-page">
+                           <div  class="p-4 mx-2 my-4"  style="position: relative; height: 300px; background-image: url('https://images.pexels.com/photos/1122639/pexels-photo-1122639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                            
+                           </div>
+                           <a style=""  class="btn btn-success  mb-2" href="">
+                              
+                            Home
+                         </a>
+                         <h6 style="   " class="text-white mb-2">Home Two</h6>
+                      </div>
+                      <div class="each-collapse-page">
+                           <div  class="p-4 mx-2 my-4"  style="position: relative; height: 300px; background-image: url('https://images.pexels.com/photos/1122639/pexels-photo-1122639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                            
+                           </div>
+                           <a style=""  class="btn btn-success  mb-t" href="">
+                              
+                            Home
+                         </a>
+                         <h6 style="   " class="text-white mb-t">Home Three</h6>
+                      </div>
+                      <div class="each-collapse-page p-3">
+                           <div  class="p-4 mx-2 my-4"  style="position: relative; height: 300px; background-image: url('https://images.pexels.com/photos/1122639/pexels-photo-1122639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                            
+                           </div>
+                           <a style=""  class="btn btn-success mb-2" href="">
+                              
+                            Home
+                         </a>
+                         <h6 style="   " class="text-white mb-t">Home Four</h6>
+                      </div>
+                      
+                      
+                      
+                     
+                    </div>
+                
+                 </div>
+               </div>
+               <!-- toggle end -->
+               
+              </div>
+            <li class="nav-item nav-li d-flex justify-content-between">
+              <a class="nav-link text-white nav-can-a " href="otherpages/about.html">About</a>
+              <!-- <button class="canv-btn-plus">+</button> -->
+            </li>
+
+            <li class="nav-item nav-li d-flex justify-content-between">
+             <!-- toggle -->
+              <a class="nav-link text-white nav-can-a " href="#">Causes</a>
+              <button id="causes-b" onclick="changeButtonText('causes-b')" style="overflow: hidden !important;"  class="canv-btn-plus" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                +
+              </button>
+            </li>
+            <div class="bg-dark" style="margin-left: -20px !important;">
+                
+              <div   class="collapse" id="collapseExample">
+                <div style="" class="card card-body bg-dark each-collapse">
+                  <ul>
+                    <li class="text-white text-start" style="list-style: none;">1</li> 
+                    <li class="text-white text-start" style="list-style: none;">2</li> 
+                    <li class="text-white text-start" style="list-style: none;">3</li> 
+                  </ul>
+                </div>
+              </div>
+              <!-- toggle end -->
+              
+             </div>
+
+            <li class="nav-item nav-li d-flex justify-content-between">
+             <!-- toggle -->
+              <a class="nav-link text-white nav-can-a " href="#">Pages</a>
+              <button id="pages-b" onclick="changeButtonText('pages-b')" style="overflow: hidden !important;"  class="canv-btn-plus" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                +
+              </button>
+            </li>
+            <div class="bg-dark" style="margin-left: -20px !important;">
+                
+              <div   class="collapse" id="collapseExample2">
+                <div style="" class="card card-body bg-dark each-collapse">
+                  <ul>
+                    <li class="text-white text-start" style="list-style: none;">
+                      <a onclick="route()" class="dropdown-item nav-sub" href="/project">Project</a>
+                    </li> 
+                    <li class="text-white text-start" style="list-style: none;">
+                      <a onclick="route()" class="dropdown-item nav-sub" href="/singleproject">Project Single</a>
+                    </li> 
+                    <li class="text-white text-start" style="list-style: none;">
+                      <a onclick="route()" class="dropdown-item nav-sub" href="/volunteer">Volunteer</a>
+                    </li> 
+                    <li class="text-white text-start" style="list-style: none;">
+                      <a onclick="route()" class="dropdown-item nav-sub" href="/singlevolunteer">Volunteer Single</a>
+                    </li> 
+                    <li class="text-white text-start" style="list-style: none;">
+                      <a onclick="route()" class="dropdown-item nav-sub" href="/faq">FAQ</a>
+                    </li> 
+                    <li class="text-white text-start" style="list-style: none;">
+                      <a onclick="route()" class="dropdown-item nav-sub" href="/404">404 Error</a>
+                    </li> 
+                    
+                  </ul>
+                </div>
+              </div>
+              <!-- toggle end -->
+              
+             </div>
+            
+             <li class="nav-item nav-li d-flex justify-content-between">
+              <!-- toggle -->
+               <a class="nav-link text-white nav-can-a " href="#">Event</a>
+               <button id="event-b"  onclick="changeButtonText('event-b')" style="overflow: hidden !important;"  class="canv-btn-plus" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+                 +
+               </button>
+             </li>
+             <div class="bg-dark" style="margin-left: -20px !important;">
+                 
+               <div   class="collapse" id="collapseExample3">
+                 <div style="" class="card card-body bg-dark each-collapse">
+                   <ul>
+                     <li class="text-white text-start" style="list-style: none;">
+                      <a onclick="route()" class="dropdown-item nav-sub" href="/events">Events</a>
+                    </li> 
+                     <li class="text-white text-start" style="list-style: none;">
+                      <a onclick="route()" class="dropdown-item nav-sub" href="/eventsingle">Event Single</a>
+                    </li> 
+                    
+                   </ul>
+                 </div>
+               </div>
+               <!-- toggle end -->
+               
+              </div>
+              <li class="nav-item nav-li d-flex justify-content-between">
+                <!-- toggle -->
+                 <a class="nav-link text-white nav-can-a " href="#">Blog</a>
+                 <button id="blog-b"  onclick="changeButtonText('blog-b')" style="overflow: hidden !important;"  class="canv-btn-plus" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+                   +
+                 </button>
+               </li>
+               <div class="bg-dark" style="margin-left: -20px !important;">
+                   
+                 <div   class="collapse" id="collapseExample4">
+                   <div style="" class="card card-body bg-dark each-collapse">
+                     <ul>
+                       <li class="text-white text-start" style="list-style: none;">
+                        <a onclick="route()" class="dropdown-item nav-sub" href="/blogs">All Blogs</a>
+                      </li> 
+                       <li class="text-white text-start" style="list-style: none;">
+                        <a onclick="route()" class="dropdown-item nav-sub" href="/singleblog">Single blog</a>
+                      </li> 
+                       
+                     </ul>
+                   </div>
+                 </div>
+                 <!-- toggle end -->
+                 
+                </div>
+            <li class="nav-item nav-li d-flex justify-content-between">
+              <a class="nav-link text-white nav-can-a" href="otherpages/contact.html">Contact</a>
+              <!-- <button class="canv-btn-plus">+</button> -->
+            </li>
+            
+            <!-- Add more nav-items as needed -->
+          </ul>
+          <!-- offcanvas shortcut footer -->
+          <div>
+            <div class="d-flex ">
+              <span><svg class="svg-size" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></span>
+              <p  class="mx-1 text-white opa-hover">01234567891</p>
+            </div>
+            <div class="d-flex ">
+              <span><svg class="svg-size" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></span>
+              <p  class="mx-1 text-white  opa-hover">abcd@gmail.com</p>
+            </div>
+            <div class="d-flex ">
+              <span><svg class="svg-size" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg></span>
+              <p class="mx-1 text-white opa-hover">1234 Dhaka Bangladesh</p>
+            </div>
+            
+            <div class="">
+              <ul class="social px-0">
+                  <li>
+                      <svg class="facebook social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+                      <!-- <a href="" target="_blank" class="facebook"><i class="fa fa-facebook-f"></i></a> -->
+                  </li>
+                  <li>
+                      <svg class="instagram social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                      <!-- <a href="" class="instagram"><i class="fa fa-instagram"></i></a> -->
+                  </li>
+                  <li>
+                      <svg class="linkedin social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
+                    
+                  </li>
+  
+                  <li>
+                      <svg class="pinterest" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"/></svg>
+                  </li>
+                  
+              </ul>
+            </div>
+          </div>
+  
+  
+        </div>
+      </div>
+    </nav>
+   </header>
+      
+      <!-- crousel -->
+      
+   
+      
+      
+   <!-- crousel End-->
+
+<!-- section 8888 end -->
+
+
+<section id="main-page">
+  
+</section>
+
+
+<!-- Scroll to Top Arrow -->
+
+<div class="scroll-to-top" id="scrollToTop">
+  <svg class="progress-circle" width="50" height="50" viewBox="0 0 36 36">
+      <path class="circle-bg" d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+      <path class="circle" id="progressCircle" d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+  </svg>
+  <svg style="color: #DC3232;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+  </svg>
+</div>
+
+<!-- footer section -->
+<footer>
+
+  <div class="containerrr container mb-4 pb-2">
+    <div class="row">
+      <!-- Div 1 -->
+      <div  data-aos="fade-up" data-aos-duration="400" class="col-md-6 col-lg-3 mx-0 px-0">
+        <div class="flex-itemmm">
+           
+          <img class="w-75 mb-5" src="https://baid-bbcf.org/wp-content/themes/baidbbcf/images/c3762578e2d192351afc05eb6f898cf2_baidbbcf_logo_banner_22.png" alt="">
+          <p  class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla efficitur justo nec semper consequat.</p>
+          <a href="" class="donate-btn mt-5"><span>Donate Now</span></a>
+        </div>
+      </div>
+      <!-- Div 2 -->
+      <div  data-aos="fade-up" data-aos-duration="600" style="margin-right: -20px !important;" class="col-md-6 col-lg-3 py-0">
+        <div class="flex-itemmm">
+          <h1  class="text-white footer-h1">Quick Links</h1>
+          <ul style="padding: 0px;" class="">
+            <li class="d-flex li-footer">
+                <svg class="svg-size2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>
+            <p style="margin-top: -7px; color: #797979;" class="mx-1"><a style=" color: #797979;" href="">Our Mission</a></p>
+            </li>
+            <li class="d-flex li-footer">
+                <svg class="svg-size2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>
+                <p style="margin-top: -7px; color: #797979;" class="mx-1"><a style=" color: #797979;" href="">Our Vision</a></p>
+            </li>
+            <li class="d-flex li-footer">
+                <svg class="svg-size2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>
+                <p style="margin-top: -7px; color: #797979;" class="mx-1"><a style=" color: #797979;" href="">Our Values</a></p>
+            </li>
+            <li class="d-flex li-footer">
+                <svg class="svg-size2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>
+                <p style="margin-top: -7px; color: #797979;" class="mx-1"><a style=" color: #797979;" href="">Strategic Goal</a></p>
+            </li>
+            <li class="d-flex li-footer">
+                <svg class="svg-size2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>
+                <p style="margin-top: -7px; color: #797979;" class="mx-1"><a style=" color: #797979;" href="">Strategic priorities</a></p>
+            </li>
+            <li class="d-flex li-footer">
+                <svg class="svg-size2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>
+                <p style="margin-top: -7px;" class="mx-1"><a style=" color: #797979;" href="">Mandates</a></p>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+      <!-- Div 3 -->
+      <div  data-aos="fade-up" data-aos-duration="800" class="col-md-6 col-lg-3">
+        <div class="flex-itemmm">
+            <h1 class="text-white footer-h1">Latest Post</h1>
+         
+          <div class="row flex-itemmm-inner ">
+            <div class="col-4 flex-itemmm-contents px-2 pb-2">
+              <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ120VfQ6_coypaiDTmd0FK4KpwZ6wyFa_lzmunK_GsqA&s" alt="Placeholder Image">
+            </div>
+            <div class="col-8">
+                <span style="color: #6b6b6b; font-size: 14px; font-weight: 400;">22 August 2024</span>
+                <p  class="text-white opa-hover">Provide healthy Improvised</p>
+            </div>
+          </div>
+          <div class="row flex-itemmm-inner ">
+            <div class="col-4 flex-itemmm-contents px-2 pb-2">
+              <img class="img-fluid" src="https://kesgravebaptistchurch.org.uk/wp-content/uploads/2021/04/Mawson_family_2021-1024px-square.jpg" alt="Placeholder Image">
+            </div>
+            <div class="col-8">
+                <span style="color: #6b6b6b; font-size: 14px; font-weight: 400;">22 December 2024</span>
+                <p  class="text-white  opa-hover">Robin's New Album</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- Div 4 -->
+      <div  data-aos="fade-up" data-aos-duration="1000" class="col-md-6 col-lg-3">
+        <div class="flex-itemmm">
+          <h1 class="text-white footer-h1">Contact us</h1>
+          <div class="d-flex ">
+            <span><svg class="svg-size" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></span>
+            <p  class="mx-1 text-white opa-hover">01234567891</p>
+          </div>
+          <div class="d-flex ">
+            <span><svg class="svg-size" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></span>
+            <p  class="mx-1 text-white  opa-hover">abcd@gmail.com</p>
+          </div>
+          <div class="d-flex ">
+            <span><svg class="svg-size" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg></span>
+            <p class="mx-1 text-white opa-hover">1234 Dhaka Bangladesh</p>
+          </div>
+          
+          <div class="">
+            <ul class="social px-0">
+                <li>
+                    <svg class="facebook social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+                    <!-- <a href="" target="_blank" class="facebook"><i class="fa fa-facebook-f"></i></a> -->
+                </li>
+                <li>
+                    <svg class="instagram social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                    <!-- <a href="" class="instagram"><i class="fa fa-instagram"></i></a> -->
+                </li>
+                <li>
+                    <svg class="linkedin social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
+                  
+                </li>
+
+                <li>
+                    <svg class="pinterest" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"/></svg>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</footer>
+
+<div class="p-3 bg-dark">
+  <p class="text-white text-center">© All Copyright 2024 by SYP Solutions</p>
+</div>
+
+
+
+
+<script>
+ // route
+
+const route = (event) => {
+  event = event || window.event;
+  event.preventDefault();
+  window.history.pushState({}, "", event.target.href);
+  handleLocation();
+};
+
+const routes = {
+  404: "/otherpages/error.html",
+  "/": "/otherpages/home.html",
+  "/index.html": "/otherpages/home.html",
+  "/otherpages/about": "/otherpages/about.html",
+  "/contact": "/otherpages/contact.html",
+  "/volunteer": "/otherpages/volunteer.html",
+  "/singlevolunteer": "/otherpages/singlevolunteer.html",
+  "/project": "/otherpages/project.html",
+  "/singleproject": "/otherpages/singleproject.html",
+  "/faq": "/otherpages/faq.html",
+  "/blogs": "/otherpages/blogs.html",
+  "/singleblog": "/otherpages/singleblog.html",
+  "/events": "/otherpages/events.html",
+  "/eventsingle": "/otherpages/eventsingle.html",
+  "/donate": "/otherpages/donatenow.html",
+  "/404": "/otherpages/error.html",
+  "/*": "/otherpages/error.html",
+
+};
+
+const handleLocation = async () => {
+  const path = window.location.pathname;
+  const route = routes[path] || routes[404];
+  const html = await fetch(route).then((data) => data.text());
+  document.getElementById("main-page").innerHTML = html;
+};
+
+window.onpopstate = handleLocation;
+window.route = route;
+
+handleLocation();
+
+// route
+
+// preloader
+document.addEventListener("DOMContentLoaded", function() {
+            window.addEventListener("load", function() {
+                setTimeout(function() {
+                    document.body.classList.add('loaded');
+                }, 2000); // Wait 2 seconds after the page is fully loaded
+            });
+        });
+          // preloader
+
+
+          document.addEventListener('DOMContentLoaded', (event) => {
+        const inputFields = document.querySelectorAll('.addAmount-value');
+        const buttons = document.querySelectorAll('.amount-btn');
+        const customAmountButton = document.querySelector('.custom-amount');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (!button.classList.contains('custom-amount')) {
+                    // Remove active class from all buttons
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to the clicked button
+                    button.classList.add('active');
+                    // Set the value of all input fields with the class 'addAmount-value' to the button's data-amount
+                    inputFields.forEach(input => input.value = button.getAttribute('data-amount'));
+                } else {
+                    // If custom amount button is clicked, clear the input fields
+                    inputFields.forEach(input => input.value = '');
+                    // Remove active class from all buttons
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                }
+            });
+        });
+
+        // Optional: If you want to handle a custom amount input, you can add an event listener to the input fields
+        inputFields.forEach(input => {
+            input.addEventListener('input', () => {
+                // Remove active class from all buttons when typing in the input fields
+                buttons.forEach(btn => btn.classList.remove('active'));
+            });
+        });
+    });
+
+</script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    
+
+    <script src="index.js"></script>
+
+</body>
+</html>
+
+
+
+
+

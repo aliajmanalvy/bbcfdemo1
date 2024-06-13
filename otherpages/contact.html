@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/version/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/navbars/navbar-1/assets/css/navbar-1.css">
+    <!-- linknew 2 add -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="../style.css">
+
+ 
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <script src="path/to/wow.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+
+    
+    <title>Contact</title>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <style>
+           #banner-bg{
+            background-image: url('https://static.vecteezy.com/system/resources/previews/003/782/506/non_2x/dark-abstract-circle-header-black-circles-with-different-transparencies-and-dark-gradient-banner-simple-geometric-pattern-background-vector.jpg');
+            width: auto;
+            height: 400px;
+         }
+         .contact-home{
+            text-decoration: none;
+             font-weight: 500;
+         }
+         .contact-home:hover{
+            color: #13814C !important;
+         }
+      
+section{
+    background-color: #fefefe;
+}
+         .roundc-icon{
+            width: 80px;
+             height: 80px;
+              line-height: 80px;
+             text-align: center;
+            border-radius: 50%;
+            /* transition: var(--transition); */
+              background-color: #13814C;
+             margin: 0 auto;
+         }
+         .each-boxc{
+            /* background-color: rgb(248, 255, 255); */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.432);
+            padding: 60px 30px;
+         }
+         .h5-c{
+            font-size: 16px;
+           font-weight: 600;
+            /* line-height: 24px;
+             */
+         }
+         .con-section{
+            /* background-color: rgb(252, 248, 242); */
+         }
+
+         select {
+    word-wrap: normal;
+}
+input, .contact__form form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    background-color: #F2F2F2 !important;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+
+
+input {
+    border: none;
+    outline: none;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.contact__form form label {
+    font-family: var(--quicksand);
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+label {
+    display: inline-block;
+}
+section{
+    background-color: #fefefe;
+}
+.nice-select{
+    width: 100%;
+    padding: 8px 10px;
+    background-color: #F2F2F2 !important;
+    border-radius: 4px;
+    margin-bottom: 30px;
+
+    box-sizing: border-box;
+    clear: both;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: normal;
+    height: 42px;
+    line-height: 40px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 30px;
+    position: relative;
+    text-align: left !important;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: auto;
+
+}
+.custom-select {
+  border-color: #ced4da !important;
+}
+
+
+.op-custom {
+  background-color: #f2f2f2 !important;
+  margin: 40px 0px !important;
+  /* height: 100px !important; */
+}
+.custom-select option:hover {
+  background: #f2f2f2; /* Replace with your preferred color */
+  color: white; /* White text for better contrast */
+}
+
+
+.contact__form form input, .contact__form form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    background-color: #fefefe;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+.contact__form form textarea {
+    border: none;
+    height: 200px;
+}
+.form-select{
+    background: #f2f2f2 !important;
+}
+
+
+/* Style the input group container */
+.input-group {
+  margin-bottom: 1rem; /* Add some spacing below the input group */
+}
+
+/* Style the select element */
+.form-select,
+.custom-select {  /* Target both Bootstrap 4 and 5 classes */
+  width: 100%;  /* Set the width to fill the container */
+  padding: 0.5rem 1.25rem (0.5rem - 3px) /* Adjust padding for aesthetics */;
+  font-size: 1rem;  /* Adjust font size if needed */
+  line-height: 1.5;  /* Adjust line height if needed */
+  
+  border-radius: 0.25rem;  /* Set border radius */
+  /* box-shadow: inset 0 0 0 transparent;  */
+  height: 65px !important;
+  /* transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
+  background: #f2f2f2 !important; 
+  
+}
+
+/* Style the select element on focus */
+.form-select:focus,
+.custom-select:focus {
+  /* border-color: #28f894;  */
+  outline: 0; 
+  /* box-shadow: inset 0 0 0 0.2rem rgba(73, 255, 128, 0.5) ;   */
+}
+
+/* Style the options within the select element */
+.form-select option,
+.custom-select option {
+  padding: 0.5rem 1.25rem;  /* Adjust padding for options */
+}
+.text-area textarea{
+    background-color: #f2f2f2;
+    height:160px !important;
+    width: 100% !important;
+}
+ form label {
+ 
+    color: #252525 !important;
+    margin-bottom: 15px !important;
+    font-weight: 700 !important;
+    font-size: 14px;
+}
+.col-lg-6 h2 {
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 50px;
+    font-family: 'Quicksand' !important;
+}
+    </style>
+</head>
+<body class="">
+    <!-- bannner contact -->
+
+    <section class="mb-4  pt-120">
+        <div id="banner-bg">
+            <div style="height: 150px;">
+
+            </div>
+                 <h2 style="margin-bottom: 10px;" class="text-white d-flex justify-content-center align-middle">
+                    Contact
+                 </h2>
+            <div class="d-flex justify-content-center align-middle">
+                <a style="" class="text-white contact-home" href="index.html">Home</a>
+                <span style="font-weight: 500; color: #19ac65;" class="">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 16 4-4-4-4m6 8 4-4-4-4"/>
+                    </svg>
+                    Contact
+                </span>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="container con-section my-5 py-5">
+        <div class=" row">
+            <div class="col-lg-4 com-md-2 col-sm-12 ">
+               <div class="each-boxc">
+                <div class="roundc-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28 13.3333C28 22.6667 16 30.6667 16 30.6667C16 30.6667 4 22.6667 4 13.3333C4 10.1507 5.26428 7.0985 7.51472 4.84806C9.76516 2.59763 12.8174 1.33334 16 1.33334C19.1826 1.33334 22.2348 2.59763 24.4853 4.84806C26.7357 7.0985 28 10.1507 28 13.3333Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M16 17.3333C18.2091 17.3333 20 15.5425 20 13.3333C20 11.1242 18.2091 9.33334 16 9.33334C13.7909 9.33334 12 11.1242 12 13.3333C12 15.5425 13.7909 17.3333 16 17.3333Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+                <h5 style="margin-top: 20px;" class="text-center h5-c">Baptist Aid-BBCF – Bangladesh Baptist Fellowship, 7 Green Corner, Green Road Dhaka, Dhaka Division 1205
+
+                </h5>
+               </div>
+                
+            </div>
+            <div class="col-lg-4 com-md-2 col-sm-12 ">
+                <div class="each-boxc">
+                    <div class="roundc-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.33464 5.33334H26.668C28.1346 5.33334 29.3346 6.53334 29.3346 8.00001V24C29.3346 25.4667 28.1346 26.6667 26.668 26.6667H5.33464C3.86797 26.6667 2.66797 25.4667 2.66797 24V8.00001C2.66797 6.53334 3.86797 5.33334 5.33464 5.33334Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M29.3346 8L16.0013 17.3333L2.66797 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <h5 style="margin-top: 20px;" class="text-center h5-c">baid@baid-bbcf.org</h5>
+                    <!-- <h5 class="text-center h5-c">contact@example.com</h5> -->
+                </div>
+            </div>
+            <div class="col-lg-4 com-md-2 col-sm-12 ">
+                <div class="each-boxc">
+                    <div class="roundc-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="80" height="80" rx="40" fill="#13814C"></rect>
+                            <path d="M32.6559 27C32.1329 27 31.6169 27.188 31.1869 27.531L31.1249 27.562L31.0939 27.594L27.9689 30.813L27.9999 30.843C27.5413 31.2594 27.2164 31.8022 27.0662 32.4031C26.916 33.004 26.9472 33.6359 27.1559 34.219C27.1599 34.227 27.1519 34.242 27.1559 34.25C28.0039 36.676 30.1719 41.36 34.4059 45.594C38.6559 49.844 43.4019 51.926 45.7499 52.844H45.7809C46.3693 53.0385 46.998 53.0774 47.6059 52.9568C48.2139 52.8362 48.7802 52.5604 49.2499 52.156L52.4059 49C53.2339 48.172 53.2339 46.734 52.4059 45.906L48.3439 41.844L48.3119 41.781C47.4839 40.953 46.0159 40.953 45.1869 41.781L43.1869 43.781C41.6859 43.0599 40.3053 42.1114 39.0939 40.969C37.4569 39.406 36.6209 37.609 36.3129 36.906L38.3129 34.906C39.1529 34.066 39.1679 32.668 38.2809 31.844L38.3119 31.812L38.2189 31.719L34.2189 27.594L34.1879 27.563L34.1249 27.531C33.7098 27.1921 33.1917 27.0048 32.6559 27ZM32.6559 29C32.7376 29.0047 32.8151 29.038 32.8749 29.094L36.8749 33.187L36.9689 33.281C36.9609 33.273 37.0269 33.379 36.9059 33.5L34.4059 36L33.9369 36.438L34.1569 37.062C34.1569 37.062 35.3049 40.137 37.7189 42.438L37.9379 42.625C40.2609 44.746 42.9999 45.906 42.9999 45.906L43.6249 46.188L46.5939 43.218C46.7659 43.047 46.7339 43.047 46.9059 43.218L50.9999 47.314C51.1719 47.485 51.1719 47.423 50.9999 47.594L47.9369 50.657C47.4769 51.052 46.9879 51.134 46.4069 50.939C44.1409 50.048 39.7379 48.114 35.8119 44.189C31.8549 40.231 29.7889 35.743 29.0319 33.564C28.8789 33.157 28.9879 32.556 29.3439 32.251L29.4059 32.188L32.4379 29.095C32.4969 29.0391 32.5737 29.0055 32.6549 29H32.6559Z" fill="white"></path>
+                        </svg>
+                    </div>
+                    <h5 style="margin-top: 20px;" class="text-center h5-c">+208-6666-0112</h5>
+                    <h5 class="text-center h5-c">+380961381877</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container"> 
+        <div class="row  flex-sm-row-reverse flex-lg-none">
+            
+            <div class="col-lg-6 col-md-12">
+                <h5 style="
+                font-weight: 700;
+                font-size: 14px;" class="about3 mb-2">
+                    <svg style="margin-top: -4px;" class="left-right-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"/></svg>
+                    CONTACT
+                    <svg style="margin-top: -4px;" class="left-right-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>
+                </h5>
+                <h2 class="my-4">
+                    GET IN TOUCH
+                </h2>
+                <form action="#">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label for="name">Your Name*</label>
+                            <input id="name" type="text" placeholder="Your Name">
+                        </div>
+                        <div class="col-6">
+                            <label for="email">Your Email*</label>
+                            <input id="email" type="email" placeholder="Your Email">
+                        </div>
+                    </div>
+                    <label class="mt-2" for="subject">Subject*</label>
+                    <div class="input-group mt-2 mb-3">
+                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                          <option  class="op-custom " selected>Choose...</option>
+                          <option style="height: 50px !important;" class="op-custom"  value="1">UI/UX design</option>
+                          <option class="op-custom"  value="2">Web Developer</option>
+                          <option class="op-custom"  value="3">Marketing Manager</option>
+                          <option class="op-custom"  value="4">Electrical Engineer</option>
+                          <option   class="op-custom"  value="5">Web Designer</option>
+                        </select>
+                       
+                     </div>
+                    <div class="text-area">
+                        <label for="massage">Your Review*</label>
+                        <textarea class="p-2" id="massage" placeholder="Write Message"></textarea>
+                    </div>
+                    <div class="btn-two">
+                        <span class="btn-circle desplode-circle mb-2" style="left: 215.896px; top: 18.0694px;">
+                        </span>
+                        <!-- <a href="#" class="btn-inner">
+                            <span class="btn-text">
+                                Post Comment
+                            </span>
+                        </a> -->
+                        <a class="donate-button  mt-4 mb-5" href="">Post Comment</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-md-12  mb-5">
+                <img src="../resource/map1.JPG" alt="">
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+    <script>
+        function initMap() {
+          // Define map options with Bangladesh center and lower zoom
+          const mapOptions = {
+            zoom: 7, // Lower zoom level for Bangladesh view
+            center: { lat: 23.7104, lng: 90.4074 } // Coordinates for Dhaka, Bangladesh
+          };
+    
+          // Create the map object with error handling
+          const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+          if (!map) {
+            alert("Error creating the map. Please check the JavaScript console for details.");
+            return;
+          }
+        }
+
+      
+      </script>
+
+<!-- <link rel="preload" href="https://maps.gstatic.com/maps-api-v3/embed/js/57/0/init_embed.js" nonce="" as="script">
+<script src="https://maps.googleapis.com/maps/api/js?client=google-maps-embed&amp;paint_origin=&amp;libraries=geometry,search&amp;v=weekly&amp;loading=async&amp;language=en&amp;region=bd&amp;callback=onApiLoad" nonce="" async="" defer=""></script>
+<script src="https://maps.gstatic.com/maps-api-v3/embed/js/57/0/init_embed.js"></script> -->
+
+      <!-- googleapis -->
+
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+</body>
+</html>
